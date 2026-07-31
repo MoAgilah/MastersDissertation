@@ -1,113 +1,97 @@
 # AI Game Controller
 
-A modular **C++ / SFML game AI project** demonstrating an AI-controlled agent for a 2D platformer. The project explores neuroevolution, autonomous gameplay, fitness evaluation, simulation loops, and reusable game engine systems.
+A modern C++ artificial intelligence project that combines a custom SFML platforming simulation with NeuroEvolution of Augmenting Topologies (NEAT).
 
-The system uses an evolutionary learning approach to train neural-network-based controllers to navigate a platformer environment and compare AI behaviour against manual human play.
+AI Game Controller recreates a level inspired by Yoshi's Island 1 from Super Mario World and uses evolutionary computation to train an artificial neural network capable of controlling Mario without scripted gameplay behaviour. Rather than relying on predefined rules or decision trees, the controller learns through repeated evaluation, fitness optimisation and genetic evolution.
 
----
-
-## 🎥 Preview
-
-| AI-Controlled Mode | Manual Mode |
-|--------------------|-------------|
-| ![AI Demo](https://raw.githubusercontent.com/MoAgilah/AI-Game-Controller/master/SFMLGameEngine/Previews/GIFs/AutomatedDemo.gif) | ![Manual Demo](https://raw.githubusercontent.com/MoAgilah/AI-Game-Controller/master/SFMLGameEngine/Previews/GIFs/ManualDemo.gif) |
+Developed as the practical component of my undergraduate dissertation, the project demonstrates how machine learning, game simulation and real-time C++ systems can be combined to investigate autonomous gameplay.
 
 ---
 
-## 🧠 Overview
+## The Engineering Problem
 
-This project is a refactored version of a Master’s dissertation exploring how an AI agent can learn to play a 2D platformer level using evolutionary learning techniques.
+Most videogame AI relies on predefined rules, finite-state machines or decision trees. While these approaches can produce predictable behaviour, they cannot independently improve through experience.
 
-The project combines a custom 2D game framework with an AI controller, allowing automated agents to be evaluated, selected, and improved across generations using gameplay performance metrics.
-
----
-
-## ⚙️ Key Features
-
-- AI controller using evolutionary learning strategies
-- Neural-network-based gameplay control
-- Fitness evaluation based on gameplay performance
-- Manual play mode for testing and comparison
-- Custom 2D engine systems built with C++ and SFML
-- Game state management for menus, loading, gameplay, and pause states
-- Physics and collision handling
-- Player and enemy entity systems
-- Debugging and simulation tooling
-- Performance logging for AI experimentation
+AI Game Controller explores an alternative approach by combining a complete platforming simulation with NeuroEvolution of Augmenting Topologies (NEAT). The challenge was to evolve an artificial neural network capable of navigating a complex level using only information gathered from the surrounding environment, while maintaining deterministic gameplay, repeatable evaluation and measurable fitness across successive generations.
 
 ---
 
-## 🤖 AI System
+## AI System Architecture
 
-The AI controller uses a population-based learning process where each controller attempts to complete the level and is scored using a fitness function.
+<p align="center">
+    <img width="600" alt="AIGameController" src="https://github.com/user-attachments/assets/171ed8f7-6974-40f0-91b9-648113515876" />
+</p>
 
-### Core Process
-
-1. Generate a population of neural-network controllers.
-2. Run each controller through the platformer level.
-3. Evaluate performance using fitness metrics such as distance, survival, and completion.
-4. Select stronger controllers for mutation and crossover.
-5. Repeat across generations to improve gameplay behaviour.
-
-This allows the agent to gradually learn movement, jumping, obstacle avoidance, and level progression.
+The project is organised into distinct layers that separate the platforming simulation, neural controller and evolutionary training systems. Gameplay provides a deterministic environment for evaluation, while the controller interprets environmental information and NEAT evolves increasingly capable neural networks over successive generations.
 
 ---
 
-## 🧱 Architecture
+## Engineering Goals
 
-The project is structured around reusable game and AI systems. Gameplay, AI decision-making, physics, rendering, and state management are kept modular to support maintainability and experimentation.
+The project was designed to demonstrate:
 
-```text
-AI-Game-Controller/
-└── SFMLGameEngine/
-    ├── Bin/          → Downloadable builds
-    ├── Code/         → Source code
-    ├── Resources/    → Fonts, sprites, shaders, and outputs
-    ├── Previews/     → Screenshots and GIFs
-    └── README.md     → Project documentation
-```
+- NeuroEvolution of Augmenting Topologies (NEAT)
+- Artificial neural networks
+- Evolutionary computation
+- Genetic algorithms
+- Real-time game simulation
+- Modular gameplay architecture
+- AI visualisation and debugging
+
+Although demonstrated through autonomous gameplay, the engineering principles apply equally to robotics, autonomous systems, optimisation problems, simulation software and intelligent control systems.
 
 ---
 
-## 🛠 Technologies
+## Key Features
 
-- C++
+- Complete 2D platforming simulation built with SFML
+- Autonomous gameplay using evolved neural networks
+- NeuroEvolution of Augmenting Topologies (NEAT)
+- Configurable environmental input representations
+- Fitness-based evolutionary training
+- Neural-network visualisation and debugging tools
+- Human and AI controllers operating within the same simulation
+
+---
+
+## Technologies & Engineering Practices
+
+### Development
+
+- Modern C++
 - SFML
 - Visual Studio
-- Object-oriented programming
-- Evolutionary algorithms
-- Artificial neural networks
-- 2D physics and collision systems
-- Game state architecture
+- Git
+
+### Engineering Practices
+
+- Artificial Neural Networks
+- NeuroEvolution of Augmenting Topologies
+- Genetic Algorithms
+- Evolutionary Computation
+- Real-Time Simulation
+- Object-Oriented Design
+- State-Driven Architecture
+- Collision Detection
+- Separation of Concerns
 
 ---
 
-## 🚀 Build & Run
+## AI Architecture Highlights
 
-### Requirements
-
-- Windows 10 or later
-- Visual Studio 2019 or 2022
-- SFML-compatible environment
-
-### Steps
-
-1. Clone the repository.
-2. Open the Visual Studio solution.
-3. Build the project.
-4. Run the executable.
-
-A standalone executable is also available in the repository download section.
+- Modular separation between gameplay and AI systems
+- Shared player implementation for human and AI control
+- Grid-based environmental sensing
+- Fitness-driven evolutionary learning
+- Species management and topology evolution
+- Neural-network visualisation tools
 
 ---
 
-## 🔭 Future Work
+## Engineering Outcome
 
-- Save/load support for trained neural networks
-- Visual AI debugging overlays
-- Additional level files and training scenarios
-- Adjustable AI training parameters
-- Cross-platform release builds
-- Improved simulation speed and optimisation
+AI Game Controller demonstrates how evolutionary computation can be integrated into a real-time C++ application to produce autonomous gameplay.
+
+By separating the platforming simulation from the neural controller and evolutionary systems, the project provides a repeatable environment in which artificial neural networks can be trained and evaluated. The resulting controller successfully learns to navigate the level through fitness-driven evolution, demonstrating the practical application of machine learning, simulation and software engineering within an interactive system.
 
 ---
